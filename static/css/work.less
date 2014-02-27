@@ -1,0 +1,58 @@
+@import 'colors.less';
+@import 'fonts.less';
+
+#content-work {
+    margin: 0 auto;
+    width: 40%;
+    h4 {
+        font-size: 1.4em;
+        .ffstandard();
+    }
+
+    h3 {
+        font-size: 3em;
+        color: @green;
+        .ffstandard-light();
+    }
+    ul {
+        border-left: 1px solid @red;
+        list-style-type: none;
+        li {
+            width: 100%;
+            color: @text-color;
+            .ffstandard();
+            a {
+                color: darken(@text-color, 10%);
+                text-decoration: none;
+                border-bottom: 1px solid @text-color;
+            }
+            a:hover {
+                color: @text-color;
+                border-bottom: 1px solid @blue;
+            }
+            div {
+                a {
+                    color: darken(@blue, 20%);
+                    font-weight: 400;
+                }
+                a:hover {
+                    color: @blue;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:320px) and (max-width:639px) {
+	#content-work {
+        width: 90%;
+          ul {
+              padding-left: 1em;
+          }
+    }
+}
+@media only screen and (min-width : 640px) and (max-width : 1024px) {
+	#content-work {
+        width: 80%;
+    }
+}

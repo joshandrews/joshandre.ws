@@ -1,0 +1,51 @@
+@import 'colors.less';
+@import 'fonts.less';
+
+#content {
+    margin: 0 auto;
+    width: 50%;
+    img {
+        width: 100%;
+    }
+    .small-image {
+        width:30%;
+        margin-left:35%;
+    }
+
+    h3 {
+        font-size: 2em;
+        color: @green;
+        .ffstandard();
+    }
+    p {
+        margin:2em 0 0 0;
+        .ffstandard();
+        font-size:1.2em;
+        a {
+            color: darken(@blue, 20%);
+            font-weight: 400;
+        }
+        a:hover {
+            color: @blue;
+        }
+    }
+}
+
+@media only screen and (min-width:320px) and (max-width:639px) {
+	#content {
+        width: 90%;
+        .small-image {
+            width:60%;
+            margin-left:20%;
+        }
+    }
+}
+@media only screen and (min-width : 640px) and (max-width : 1024px) {
+	#content {
+        width: 80%;
+        .small-image {
+            width:50%;
+            margin-left:25%;
+        }
+    }
+}

@@ -1,0 +1,182 @@
+@import 'colors.less';
+@import 'fonts.less';
+
+#content {
+	width: 80%;
+	margin: 0 auto;
+	color: @text-color;
+    .body {
+		.ffstandard();
+		font-size: 1.5em;
+		border-bottom: 1px dashed #999;
+        span {
+            font-size: 1.5em;
+        }
+	}
+	.title {
+		.ffstandard();
+		font-size: 5em;
+		color: #76c3bd;
+	}
+    #image-upload {
+        position: relative;
+        margin: 2em 2em 1em 2em;
+        input {
+            outline: none;
+            display: none;
+        }
+        label {
+            text-align: center;
+            .ffstandard();
+            font-size: 1.2em;
+
+        }
+    }
+
+	h1 {
+	    font-size: 60px;
+	    font-weight: normal;
+	    text-align: center;
+	    margin-bottom: 40px;
+	    padding-bottom: 40px;
+	    letter-spacing: -2px;
+	    border-bottom: 1px solid #dbdbdb;
+	}
+
+	p {
+	    margin-bottom: 40px;
+	}
+
+	blockquote {
+	    display: block;
+	    padding-left: 20px;
+	    border-left: 6px solid lighten(@red, 10%);
+	}
+
+	.submit {
+		.ffstandard();
+		padding: 0;
+		border:0;
+		background-color:transparent;
+		font-size: 2em;
+		cursor: pointer;
+		margin: 1em 0 0 0;
+	}
+
+	#publish {
+		color: darken(#7EB12C, 10%);
+		margin: .3em 0;
+	}
+
+	#publish:hover {
+	    color: #7EB12C;
+	}
+
+	.submit:focus {
+		outline: 0;
+	}
+
+	#draft {
+		color: darken(@red, 10%);
+		margin: .3em 0;
+	}
+
+	#draft:hover {
+	    color: lighten(@red, 10%);
+	}
+	.delete {
+		overflow: hidden;
+	    white-space:nowrap;
+	    display: inline-block;
+	    text-decoration: none;
+	    float: right;
+		svg {
+			margin-top: 5px;
+			float: left;
+			zoom: 200%;
+		}
+		svg:hover {
+			path {
+				fill: @red;
+			}
+		}
+		div {
+			font-size: .9em;
+			opacity: 0;
+	        max-width: 0;
+	        float: left;
+	        margin-top: .31em;
+			transition: max-width .1s ease-out .1s, opacity .1s ease-out .1s, color;
+			div {
+				float: left;
+			}
+
+		}
+	}
+	.delete:hover div {
+        opacity: 1;
+        max-width: 300px;
+        transition: max-width .1s ease-out .1s, opacity .1s ease-out .1s;
+        color: @red;
+    }
+    .delete:hover {
+    	svg {
+    		path {
+    			fill: @red;
+    		}
+    	}
+    }
+	.delete:hover {
+		-webkit-transition: all 1s ease-in-out;
+        -moz-transition: all 1s ease-in-out;
+        -o-transition: all 1s ease-in-out;
+        transition: all 1s ease-in-out;
+	}
+	.delete-post {
+
+	}
+
+}
+.published-post {
+    text-align:  center;
+    padding: 2em;
+    font-family: Helvetica Neue;
+    font-weight: 200;
+    font-size: 1.5em;
+    background-color: lighten(@red, 10%);
+    color: white;
+}
+.strikethrough {
+	text-decoration:line-through;
+	display: inline;
+}
+.or {
+	font-style:italic;
+	display: inline;
+}
+.submit-form {
+	text-align: center;
+	margin: 0 auto;
+}
+.editable {
+    outline: none;
+    margin: 0 0 10px 0;
+    padding: 0 0 10px 0;
+
+}
+
+@media only screen and (min-width:320px) and (max-width:639px) {
+    #content {
+        .delete {
+            display: none;
+        }
+        .title {
+            font-size: 3em;
+        }
+        .body {
+            font-size: 1.2em;
+        }
+    }
+}
+@media only screen and (min-width : 640px) and (max-width : 1024px) {
+}

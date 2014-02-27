@@ -1,0 +1,74 @@
+@import 'colors.less';
+@import 'fonts.less';
+
+#header {
+  background-color: #CCCCCC;
+}
+#content {
+    height: auto;
+	background-color: #333333;
+	margin: 0 auto;
+	text-align: center;
+    padding: 0px 20px 0px 20px;
+    .welcome {
+        .ffstandard();
+        padding-top: 2.5em;
+        padding-bottom: 2.5em;
+        line-height: 1.8em;
+        h4 {
+            font-size: 2em;
+            color: @green;
+            margin: 0px;
+            padding-top: .5em;
+            padding-bottom: .5em;
+        }
+        div {
+            font-size: 1.2em;
+            color: #EFEFEF;
+            width: 50%;
+            margin: 0 auto;
+            padding-bottom: 1em;
+        }
+
+        .fmlink {
+            padding: 5px 0px 5px 0px;
+        }
+
+        a {
+            color: @blue;
+            font-weight: 400;
+        }
+
+        a:hover {
+            color: lighten(@blue, 20%);
+        }
+    }
+}
+
+@media only screen and (min-width:320px) and (max-width:639px) {
+    #content {
+        padding-bottom: 10px;
+        .welcome {
+            div {
+                width: 90%;
+            }
+        }
+	}
+}
+@media only screen and (min-width : 640px) and (max-width : 1024px) {
+    #content {
+        padding-bottom: 10px;
+        .welcome {
+            line-height: 2.2em;
+            padding-top: 25px;
+            padding-bottom: 15px;
+            div {
+                width: 70%;
+            }
+        }
+	}
+}
+@media screen and (min-width:960px) and (max-width:1279px) {}
+@media screen and (min-width:1280px) and (max-width:1599px) {}
+@media screen and (min-width:1600px) {}
+@media screen and (min-width:1920px) {}
