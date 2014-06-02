@@ -4,8 +4,12 @@
 #content {
     margin: 0 auto;
     width: 50%;
+	font-size:1.2em;
+	color: @text-color;
+	.ffstandard();
     img {
         width: 100%;
+	    margin:0 0 1em 0;
     }
     .small-image {
         width:30%;
@@ -17,17 +21,21 @@
         color: @green;
         .ffstandard();
     }
+	.inner-title {
+		font-size:1.5em;
+		color: darken(@text-color, 10%);
+	}
+	a {
+	    color: darken(@blue, 20%);
+	    font-weight: 400;
+	    text-decoration: none;
+    }
+    a:hover {
+        color: @blue;
+    }
+
     p {
-        margin:2em 0 0 0;
-        .ffstandard();
-        font-size:1.2em;
-        a {
-            color: darken(@blue, 20%);
-            font-weight: 400;
-        }
-        a:hover {
-            color: @blue;
-        }
+        margin:1em 0 0 0;
     }
 }
 
