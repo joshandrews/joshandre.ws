@@ -15,6 +15,7 @@ import string
 import espresso
 import install
 import markdown
+import sys
 ### Url mappings
 
 web.config.debug = False
@@ -361,10 +362,8 @@ class Edit:
         post = blog.get_post(int(id))
         if post is None:
             post_id = blog.new_post("<p><br></p>", 0)
-            print post_id
             raise web.seeother("/blog/edit/"+str(post_id))
         render = user.create_render(session)
-        print post.markdown.encode('utf8').decode('utf8').encode("latin-1","ignore")
         return render.edit(gen_head(), gen_offleft(), post, post.markdown)
 
 
@@ -373,7 +372,6 @@ class Edit:
         if user.logged(session):
             if session.privilege == 2:
                 post = blog.get_post(int(id))
-                print body
                 if re.sub('<[^<]+?>', '', title) == "" or body == "":
                     Delete.POST(self, int(id))
                 else:
@@ -406,7 +404,6 @@ class EmptyTrash:
 class LiveSaveBody:
     def POST(self, id, published):
         body = web.input().textarea
-        print body
         blog.update_post_body(int(id), body.replace('%2b', '+'), markdown.markdown(body.replace('%2b', '+')))
 
 class LiveSaveTitle:
@@ -426,4 +423,10 @@ def create_americano_database(user, password, genpass):
         cur.execute(line)
 
 if __name__ == '__main__':
+    if not len(sys.argv) is 3:
+        web.wsgi.runwsgi = lambda func, addr=None: web.wsgi.runfcgi(func, addr)
+    elif sys.argv[2] == "--dev" or sys.argv[2] == "--d" or sys.argv[2] == "-d":
+        print "Starting americano on port "+sys.argv[1]+" in development mode"
+    else:
+        print "Invalid argument"
     app.run()
