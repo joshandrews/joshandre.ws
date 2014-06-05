@@ -1,3 +1,6 @@
 [submodule "static/epicEditor"]
 	path = static/epicEditor
 	url = https://github.com/OscarGodson/EpicEditor.git
+[submodule "static/EpicEditor"]
+	path = static/EpicEditor
+	url = https://github.com/OscarGodson/EpicEditor.git
